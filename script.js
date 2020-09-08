@@ -1,12 +1,16 @@
+// Variables.
 var numberOfColors = 6;
 var colors = [];
 var pickedColor;
+
+// Selectors.
 var squares = document.querySelectorAll(".square");
 var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
 var modeButtons = document.querySelectorAll(".mode");
+var container = document.querySelector(".container");
 
 init();
 
@@ -50,8 +54,28 @@ function setUpModeButtons(){
             else if(this.textContent === "MEDIUM"){
                 numberOfColors=6;
             }
-            else{
+            else if(this.textContent === "HARD"){
                 numberOfColors=9;
+            }
+            else{
+                numberOfColors=40;
+            }
+            // Changing the size of container and squares for ultrahard mode.
+            if(this.textContent === "ULTRA HARD"){
+                container.classList.remove("container");
+                container.classList.add("ultrahard-container");
+                for(var k=0; k<squares.length; k++){
+                    squares[k].classList.remove("square");
+                    squares[k].classList.add("ultrahard-squares");
+                }
+            }
+            else{
+                container.classList.remove("ultrahard-container");
+                container.classList.add("container");
+                for(var k=0; k<squares.length; k++){
+                    squares[k].classList.remove("ultrahard-squares");
+                    squares[k].classList.add("square");
+                }
             }
             reset();
         });
