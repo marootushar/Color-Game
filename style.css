@@ -4,7 +4,6 @@ body{
 }
 .square{
     width: 30%;
-    background-color: purple;
     padding-bottom: 30%;
     margin: 1.6666%;
     float: left;
@@ -13,7 +12,7 @@ body{
     -webkit-transition: background-color 0.6s;
     -moz-transition: background-color 0.6s;
 }
-#container{
+.container{
     width: 50%;
     margin: 20px auto;
 }
@@ -65,4 +64,22 @@ button:hover{
     background-color: steelblue;
     color: white;
     border: none;
+}
+
+/* For ultra hard mode styling. */
+
+.ultrahard-container{
+    width: 90%;
+    margin: 20px auto;
+}
+
+.ultrahard-squares{
+    width: 9%;
+    padding-bottom: 9%;
+    float: left;
+    border-radius: 10%;
+    margin: 0.454545%;
+    transition: background-color 0.6s;
+    -webkit-transition: background-color 0.6s;
+    -moz-transition: background-color 0.6s;
 }
